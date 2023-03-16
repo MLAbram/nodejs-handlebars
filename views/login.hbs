@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/bootstrap-5.0.2.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title> | Login</title>
+</head>
+<body>
+    {{>header}}
+    <div class="container mt-4" style="min-height: 400px;">
+        <div class="jumbotron">
+            <h1 class="display-8">Login</h1>
+        </div>
+        {{#if message}}
+            <div style="text-align: center;" class="alert alert-{{message.type}}">
+                <button type="button" class="btn-close position-absolute top-50 end-0 translate-middle" aria-label="btn-close" data-bs-dismiss="alert"></button>
+                <strong>{{message.title}}</strong>{{message.message}}
+            </div>
+        {{/if}}
+        <div class="form-body">
+            <form method="post">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" autofocus>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-control">Login</button><br><br>
+            <a href="#">Password Reset</a>
+        </form>
+        </div>
+    </div>
+    <div style="padding: 100px;"></div>
+    {{>footer}}
+    <script src="/bootstrap-5.0.2.min.js"></script>
+</body>
+</html>
